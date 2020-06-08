@@ -12,6 +12,8 @@ void writetofasta(char *sequence)
   while(1){
     i=0;
     for(i;i<71;++i){
+      if(sequence[j]>='a'&&sequence[j]<'z'){
+         sequence[j]=sequence[j]-'a'+'A';
       fputc(sequence[j],fp);
       ++j;
     }
