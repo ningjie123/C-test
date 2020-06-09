@@ -73,7 +73,10 @@ int **read(char *file[])
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 end=10*end+(a[k]-'0');
                         b[m][0]=start;
-                        b[m][0]=end;
+                        b[m][1]=end;
+                        m++;
+                        b[m][0]=0;b[m][1]=0;//以最后的起端和终端为0作为complement标记
+                        m++;
                         start=0;
                         end=0;
                     }  
@@ -82,5 +85,6 @@ int **read(char *file[])
             }
         }       
     }
+    
     return b;
 }
