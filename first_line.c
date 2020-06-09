@@ -18,7 +18,24 @@ int strstart(char *s,char *t)
 	return 0;
 }
 
-int first_line(char *filename)
+int strtotal(char *total,char *str1,char *str2)
+{
+	int lenall,len1,len2,i=0;
+	len1 = strlen(str1);
+	len2 = strlen(str2);
+	for(i=0;i<len1;i++)
+	{
+		total[i] = str1[i];
+	}
+	for(i=0;i<len2;i++)
+	{
+		total[i+len1] = str2[i];
+	}
+	total[len1+len2] = '\n';
+	return 0;
+}
+
+int first_line(char *filename,char *firstline)
 {
 	FILE *file_in;
 	file_in = fopen(filename,"r");
@@ -53,7 +70,7 @@ int first_line(char *filename)
 		accession[i] = str[lab[1]][i + 9];
 		i++;
 	}
-	printf("%s%s\n",accession,definition);
+	strtotal(firstline,accession,definition);
 	return 0;
 }
 
@@ -61,6 +78,9 @@ int first_line(char *filename)
 
 int main()
 {
-	first_line("test.gb");
+	char firstline[1000];
+	memset(firstline,1000,'\0');
+	first_line("test.gb",firstline);
+	printf("%s",firstline);
 	return 0;
 }
