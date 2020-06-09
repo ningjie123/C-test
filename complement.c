@@ -25,9 +25,10 @@ int iscomplement(const char *s)
 //命令行参数file
 int **read(char *file[])
 {
+    int iscomplement(const char *);
     int i;
     int **b =(int **)malloc(10*sizeof(int *));
-    for (i=0;i<MAX;i++)
+    for (i=0;i<10;i++)
         b[i]=(int *)malloc(2*sizeof(int));
     FILE *ifp_a;
     char c;
