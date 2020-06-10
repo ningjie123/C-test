@@ -14,8 +14,6 @@ int is_complement(const char *s)
 {
     int i=0,j,k;
     char a[10] = "complement";
-    for (i=0;i<10;i++) printf("%c",a[i]);
-    printf("\n");
     if (strlen(s) < 10) return 0; //compare length
     for ( i=0;((i+10) <= strlen(s));i++ )
         if (s[i] == a[0])  //overlap
@@ -23,7 +21,7 @@ int is_complement(const char *s)
                 j=i;
                 k=0;
                 while ((k < 10) && (s[j] == a[k])) {j++;k++;}
-                if (k == 10) {return 1;}
+                if (k == 10) {return j;}
             }
     return 0;
 }
@@ -79,11 +77,10 @@ void read_region(char f[],struct Region region_c)
                     /* for(j=0;a[j]!='\0';++j)
                         printf("%c",a[j]);
                     printf("\n"); */  //use for quiz
-                    if (is_complement(a)) 
+                    if ((j=is_complement(a))!=0) 
                     {
                         region_c.flag='c';
-                        for (k=0;(a[k]!='(');k++);
-                        for (;(a[k]!='.');k++)
+                        for (k=j;(a[k]!='.');k++)
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 start=10*start+(a[k]-'0');
                         for (;(a[k]!='\0');k++)
