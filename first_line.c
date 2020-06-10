@@ -71,5 +71,6 @@ int first_line(char *filename,char *firstline)
 		i++;
 	}
 	strtotal(firstline,accession,definition);
+	fclose(file_in);
 	return 0;
 }

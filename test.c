@@ -11,7 +11,7 @@ struct Region
 
 int main()
 {
-    char file_name[]=".\\sequence.gb";
+    char file_name[]="./sequence.gb";
     struct Region p;
     read_region(file_name,&p);
     

@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-struct Region
+extern region
+/*struct Region
 {
     int start[10];
     int end[10];
     char flag;
-};
+};*/
 
 //读文件过程中调用，遇到CDS后执行
 int is_complement(const char *s)
@@ -28,7 +28,7 @@ int is_complement(const char *s)
 
 
 //命令行参数file
-void read_region(char f[],struct Region region_c)
+void read_region(char f[],struct REGION region_c)
 {
     int i=0;
     FILE *ifp_a;

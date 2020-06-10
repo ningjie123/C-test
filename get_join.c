@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-
+#include "libgenbank.h"
+struct REGION region3;
 int strstart2(char *s,char *t)
 {
 	int lent,i=0,j=0,k=0;
@@ -84,8 +84,8 @@ int get_join(char *filename)
 		count += countchar(s[i],'.') / 2;
 	}
 	int *region1,*region2,temp[2];
-	region1 = (int *)calloc(count+1,sizeof(int));
-	region2 = (int *)calloc(count+1,sizeof(int));
+//	region1 = (int *)calloc(count+1,sizeof(int));
+//	region2 = (int *)calloc(count+1,sizeof(int));
 	for(i=lab[0];i<lab[1];i++)
 	{
 		j=0;
@@ -95,20 +95,20 @@ int get_join(char *filename)
 			{
 				while(s[i][j] != '.')
 				{
-					region1[n] += exp_char(s[i][j],6 - k);
+					region3.start[n] += exp_char(s[i][j],6 - k);
 					k++;
 					j++;
 				}
-				region1[n] = region1[n] / exp_char('1',7 - k);
+				region3.start[n] = region3.start[n] / exp_char('1',7 - k);
 				k=0;
 				j += 2;
 				while(s[i][j] != ',' && s[i][j] != ')')
 				{
-					region2[n] += exp_char(s[i][j],6 - k);
+					region3.end[n] += exp_char(s[i][j],6 - k);
 					k++;
 					j++;
 				}
-				region2[n] = region2[n] / exp_char('1',7 - k);
+				region3.end[n] = region3.end[n] / exp_char('1',7 - k);
 				k=0;
 				n++;
 				j--;
@@ -118,15 +118,14 @@ int get_join(char *filename)
 	}
 	for(i=1;i<=line_count;i++) free(s[i]);
 	free(s);
-	free(region1);
-	free(region2);
 	fclose(file_in);
-	return 0;
+	return count;
 }
 
 int main()
 {
-	get_join("test.gb");
-	
+	int count,i;
+	count = get_join("test.gb");
+	for(i=1;i<=count;i++) printf("%d\t%d\n",region3.start[i],region3.end[i]);	
 	return 0;
 }
