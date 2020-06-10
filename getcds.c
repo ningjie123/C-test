@@ -6,9 +6,7 @@
 #include "libgenbank.h"
 
 #define MAX 200
-
-extern region;
-
+struct REGION region3;
 int isbase(char s)
 {
   if (s=='a'||s=='t'||s=='c'||s=='g'||s=='A'||s=='T'||s=='C'||s=='G')
@@ -16,7 +14,7 @@ int isbase(char s)
   else return 0;
 }  
 
-void getcds(FILE fp,char *sequence,region Region)
+void getcds(FILE* fp,char *sequence,struct REGION Region)
 {
   char buf[MAX];
   int num,i=0,j;
@@ -32,7 +30,7 @@ void getcds(FILE fp,char *sequence,region Region)
 		char *tmp[MAX];
 		fgets(tmp[j++],MAX,fp);
                 fscanf(fp,"%d",num);
-                if (num > region.end[i]){
+                if (num > Region.end[i]){
 		  int right_gap=num-Region.end[i]-1;
 		  fgets(buf,MAX,fp);
 		  break;
@@ -72,7 +70,8 @@ void getcds(FILE fp,char *sequence,region Region)
 	  sequence[s]-=4;
 	}
      } 
-  }   
+  }
+return;   
 }
 
  

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "libgenbank.h"
-struct REGION region3;
+//struct REGION region3;
 int strstart2(char *s,char *t)
 {
 	int lent,i=0,j=0,k=0;
@@ -122,10 +122,10 @@ int get_join(char *filename)
 	return count;
 }
 
-int main()
+/*int main()
 {
 	int count,i;
 	count = get_join("test.gb");
 	for(i=1;i<=count;i++) printf("%d\t%d\n",region3.start[i],region3.end[i]);	
 	return 0;
-}
+}*/
