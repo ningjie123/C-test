@@ -30,7 +30,7 @@ int is_complement(const char *s)
 
 
 //命令行参数file
-void read_region(struct Region region_c)
+void read_region(char f[],struct Region region_c)
 {
     int i=0;
     FILE *ifp_a;
@@ -39,7 +39,7 @@ void read_region(struct Region region_c)
     int m=0,j=0;
     char a[100];
     int k,start=0,end=0;
-    if ((ifp_a = fopen(".\\sequence.gb","r")) == NULL) {printf("open file error!\n");exit(1);}
+    if ((ifp_a = fopen(f,"r")) == NULL) {printf("open file error!\n");exit(1);}
     int mark=0;
     while ((c=getc(ifp_a)) != EOF)
     {
