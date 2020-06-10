@@ -1,0 +1,249 @@
+LOCUS       AF121970                6052 bp    DNA     linear   BCT 26-APR-2006
+DEFINITION  Pseudomonas aeruginosa topoisomerase (top), putative
+            transcriptional regulatory protein OhbR (ohbR), ortho-halobenzoate
+            1,2-dioxygenase beta-ISP protein OhbA (ohbA), OhbC (ohbC),
+            ortho-halobenzoate 1,2-dioxygenase alpha-ISP protein OhbB (ohbB),
+            and putative transposase A (tnpA) genes, complete cds.
+ACCESSION   AF121970
+VERSION     AF121970.1
+KEYWORDS    .
+SOURCE      Pseudomonas aeruginosa
+  ORGANISM  Pseudomonas aeruginosa
+            Bacteria; Proteobacteria; Gammaproteobacteria; Pseudomonadales;
+            Pseudomonadaceae; Pseudomonas.
+REFERENCE   1  (bases 1 to 6052)
+  AUTHORS   Tsoi,T.V., Plotnikova,E.G., Cole,J.R., Guerin,W.F., Bagdasarian,M.
+            and Tiedje,J.M.
+  TITLE     Cloning, expression, and nucleotide sequence of the Pseudomonas
+            aeruginosa 142 ohb genes coding for oxygenolytic ortho
+            dehalogenation of halobenzoates
+  JOURNAL   Appl. Environ. Microbiol. 65 (5), 2151-2162 (1999)
+   PUBMED   10224014
+REFERENCE   2  (bases 1 to 6052)
+  AUTHORS   Rodrigues,J.L., Kachel,C.A., Aiello,M.R., Quensen,J.F.,
+            Maltseva,O.V., Tsoi,T.V. and Tiedje,J.M.
+  TITLE     Degradation of aroclor 1242 dechlorination products in sediments by
+            Burkholderia xenovorans LB400(ohb) and Rhodococcus sp. strain
+            RHA1(fcb)
+  JOURNAL   Appl. Environ. Microbiol. 72 (4), 2476-2482 (2006)
+   PUBMED   16597946
+REFERENCE   3  (bases 1 to 6052)
+  AUTHORS   Hrywna,Y., Tsoi,T.V., Maltseva,O.V., Quensen,J.F. III and
+            Tiedje,J.M.
+  TITLE     Construction and characterization of two recombinant bacteria that
+            grow on ortho- and para-substituted chlorobiphenyls
+  JOURNAL   Unpublished
+REFERENCE   4  (bases 1 to 6052)
+  AUTHORS   Tsoi,T.V. and Cole,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (21-JAN-1999) Center for Microbial Ecology, Michigan
+            State University, A540 PSSB, East Lansing, MI 48824
+FEATURES             Location/Qualifiers
+     source          1..6052
+                     /organism="Pseudomonas aeruginosa"
+                     /mol_type="genomic DNA"
+                     /strain="142"
+                     /db_xref="taxon:287"
+     gene            346..1563
+                     /gene="top"
+     CDS             346..1563
+                     /gene="top"
+                     /note="Top"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="topoisomerase"
+                     /protein_id="AAD20003.1"
+                     /translation="MRCRSVSLSCKGKINHLIRLPQNHTPTALSQLQDLLDSPGLADG
+                     TRKAIQREMYAIRRGEKGERQCAFYLDGVIKDHPHRVLIHNLRIEHDGQVAQIDHLLI
+                     NRRMEFWILESKSFLNGFRISPRGEFEYWSQNRYHAMPSPIEQARRQARILEKLILDE
+                     GLAPRRLGVVMKPTIKTAILVDPKTRVIRPDPQQFNTDSVIKADAFLSEYEKRNEQAS
+                     TVELLGALPKWVKKGTIVDIGRKLLAYHAPLEIDYRAKFGVAEQRAGQRPAKPAAPIA
+                     EREDVPPEPKQAGTPEGTPSCPRCGKPMVLRTSKRGQNQGEQFWGCSGYPKCRGIIPV
+                     EVIVPAEDAGPVPTEQAIAARPAAESPTDAPVCPKCGESMVLRMSKRGSQKGSRFWGC
+                     PGFPKCRGMRSAG"
+     gene            complement(1645..2361)
+                     /gene="ohbR"
+     CDS             complement(1645..2361)
+                     /gene="ohbR"
+                     /note="IclR family regulatory protein"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative transcriptional regulatory protein
+                     OhbR"
+                     /protein_id="AAD20004.1"
+                     /translation="MSVKELADEVDMSTSRTHRYLASLVRAGLIERDAASGRYDLGEL
+                     TLQLGVAALNRLNPVAEASKTLRTLVNDVDQTAVLAVWSERGPVIAHWIHSSRPVIMN
+                     LNVGSILPILTSSSARVFLAFMPPNVLEATLDSALRALEPQAAKEFDMEKLRRQIAEV
+                     QRDHLARVAGAVAPGLLTASAPVLDAQGEPVAAMSLVATHTTDMERFEAAIPVLCRGA
+                     GQVSRRLGYRPRQPDEPSAS"
+     gene            2783..3313
+                     /gene="ohbA"
+     CDS             2783..3313
+                     /gene="ohbA"
+                     /note="ortho-halobenzoate 1,2-dioxygenase terminal
+                     oxygenase (ISP) small subunit"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="ortho-halobenzoate 1,2-dioxygenase beta-ISP
+                     protein OhbA"
+                     /protein_id="AAD20005.1"
+                     /translation="MNTDSPLKAIQPPADEQAWAVRARRQFEAEQLLYAYVEYIDDDR
+                     LEELPELFTEDGSYQIISRENVERGLPAPTMGCSNRNMLIDRIVSLRHANIYSQHAYR
+                     HVLSNVRVKAMEGDEALVQSNYVVMATRGDGIARVYSTGKYVDRLVFEEDGPKFKQKR
+                     VIFDTQLIDTLLVRPL"
+     gene            complement(3249..4601)
+                     /gene="ohbC"
+     CDS             complement(3249..4601)
+                     /gene="ohbC"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="OhbC"
+                     /protein_id="AAD20007.1"
+                     /translation="MEVGIQAQRLLVVLPKALDRILCRAIVHGARVLVDHAHERRTVL
+                     VVTDRTLNALHGVAVLQGNVTGGADQIAVGYAQLFELLVVVDEAELRPDHLELVFSNG
+                     DDVSGRERVTQLMHHQVREDRKHHQIDVVVEFPLALHDRAVSQGELRVIGVLSLAGML
+                     RGFLVGVEFGCQQAMPPRPVELYRRGLTGISPEPEGVQEKMEQAGVVGVSRILGGQLP
+                     VAVDALALKAEKPQGALAVALDDLYRHRPQVFLQRFHLIGEAREDNAVEGGNAQLGQA
+                     VPALVEGLAHATLAAHAAQEGHAFELPLQVVVPLVVNALQAAGVAVALLTHQRAAVRA
+                     AVLHDMDAAVLRSGDDDGRQPDMGGLVVARLGDLRLQGHVGPHLSTENPLVLQFQIRL
+                     VRENLVGHTERLFRRRGLGRYVGHWFFSCIETLVRNPLRAGARGACRLIACRRSRVFV
+                     "
+     gene            3354..4640
+                     /gene="ohbB"
+     CDS             3354..4640
+                     /gene="ohbB"
+                     /note="ortho-halobenzoate 1,2-dioxygenase terminal
+                     oxygenase (ISP) large subunit"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="ortho-halobenzoate 1,2-dioxygenase alpha-ISP
+                     protein OhbB"
+                     /protein_id="AAD20006.1"
+                     /translation="MTNVSPQPATAEQALRVPYKVFTDKAYLELENERIFRGKVWAYV
+                     ALEAEIPEPGDYKATHIGLSPVIVTRAEDGSIHVMENRCAHRGALVCEQRYGNASSLQ
+                     CVYHQWDYNLKGELKGVPFLRGVRGKGGMCKPFDKSRHGLTKLRVATLNGIVFASFSD
+                     EVEPLEEYLGPVAVEIIKRNCKRPLRLLGFQRQRIHSNWKLAAENSRDPYHAGLLHLF
+                     LNTFGLWRNTSESASIQLDRTGRHCLLATELHTDEEAAEHASQAQHAYNPEFTLRDSS
+                     VVQSQREFDDNINLVVLSIFPNLVVHQLGNALSTRHVIPIGEDEFEMVWTQFGFVDDD
+                     EELEQLRITHGNLIGPSGYVSLEDGDAMERVQRSVSHDKDSTSFMGMVDQNTRSMDYC
+                     ATENPIKGFWQYYQQTLGLDADFHIPEPSQAASSGA"
+     gene            complement(4731..5747)
+                     /gene="tnpA"
+     CDS             complement(4731..5747)
+                     /gene="tnpA"
+                     /note="TnpA; similar to Serratia marcescens TnpA protein"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative transposase A"
+                     /protein_id="AAD20008.1"
+                     /translation="MVDGFRMTLRLHEYVEKESFNHPYTFVAAQTGLDEKTVRDIFNA
+                     RAEFLGRWHRFETPRILGIDELYLNKRYRCILTNIEERTLLDLLATRRQDVVTNYLMK
+                     LKDRQKVEIVSMDMWNPYRAAVKAVLPQARIVVDKFHVVRMANDALERVRKGLRKELK
+                     PSQSRTLKGDRKILLKRAHEVSDRERLIMETWTGAFPQLLAAYEHKERFYGIWDATTR
+                     LQAEAALDEWIATIPKGQKEVWSDLVRAVGNWREETMTYFETDMPVTNAYTESINRLA
+                     KDKNREGRGYSFEVMRARMLYTTKHKKKAPTAKVSPFYKKTIGYGLPDFAEELNYGVD
+                     LSTI"
+ORIGIN      
+        1 gatcggcagg acaacggtta ccgtgtctat accgagaagc atggtgaggg gctggccttc
+       61 atccgtcgct gcagaatcct gggcctgtca ctggctgaga ttcacgaact acagagctat
+      121 caggacgacc ctcatcagcc ttgtgccgcc gtcaacgcct tgctcgatga tcacatctct
+      181 catgtgcggt cgcagataac cgctctgcaa gcgcttgaga aacaactcgt ttcactgaga
+      241 gcgagttgca acgatgaccg ggaagttgag gcgtgtgggg ttcttgctgg aattagcgaa
+      301 ggaaacatgc accagcagta ggtgaagcat caaccagata atccgatgag atgccggtct
+      361 gtctcactct catgcaaagg taagatcaac catttaatcc gcttacccca aaatcacacg
+      421 cccaccgcgc taagtcagct gcaggattta ctggattctc ccggcttggc agacggaacg
+      481 cgcaaggcca tacaacgcga aatgtatgcc atacgtcgcg gtgagaaggg tgagcgccag
+      541 tgtgcgttct acctcgacgg cgtcatcaag gaccaccccc atcgcgtgct gattcataac
+      601 ctgcgcatcg agcacgacgg gcaggtggcc cagatcgacc acctcttgat caaccggcga
+      661 atggaattct ggattttgga gtcgaagtcg tttctcaacg gcttcaggat ctcgccgcgt
+      721 ggtgagttcg agtactggtc ccagaaccgg taccacgcga tgccctcgcc catcgagcag
+      781 gccaggcggc aggcgcgcat cctcgagaaa ttgattctgg atgaggggct ggcgccgcga
+      841 agattgggtg tggtgatgaa gcccacgatc aagacggcga tcttggtgga ccccaaaact
+      901 cgcgtgattc ggccagaccc gcagcagttc aacaccgact cggtcattaa ggcagatgca
+      961 tttctttccg agtatgaaaa gcgcaatgaa caggcgagca cggtagaact tttgggcgcg
+     1021 ctgccaaaat gggtgaagaa gggcaccatc gtcgacatcg gccggaagct gcttgcttac
+     1081 cacgcgccgc tggagatcga ctaccgggcg aaatttggtg tggcggagca acgcgcgggc
+     1141 cagcggcctg cgaagcctgc ggccccgatc gcggaaaggg aagatgtgcc gcctgagccg
+     1201 aaacaagccg gtacgccaga gggcacgccc tcgtgccccc gttgtggcaa gcccatggtg
+     1261 ttgcgcacat ccaagcgcgg gcaaaaccaa ggggaacagt tctggggctg ttccgggtac
+     1321 ccgaaatgca gagggattat cccggttgag gtgattgtgc ctgccgagga cgctggcccg
+     1381 gttccaacag agcaggcgat tgcggcaagg ccggccgctg aaagccccac ggatgcgccg
+     1441 gtttgcccta aatgcggtga gtcgatggtt ctgcggatgt ccaagcgtgg aagccagaag
+     1501 ggaagccggt tttggggctg cccggggttt ccgaagtgtc gtggcatgcg cagcgctggc
+     1561 tgagggggtg ggcggacacg cgcactacct cagtgcccgt catgcccggc acgctcccca
+     1621 ccccggaacg tgattacgtc gaactcatga agcggatggc tcgtcgggtt gtcgaggccg
+     1681 gtagccgagc cggcgtgaaa cctgaccagc accgcgacag agtaccggta tggccgcctc
+     1741 gaagcgttcc atatcggtcg tatgggtcgc gaccaggctc atggccgcga ccggctcgcc
+     1801 ctgcgcgtcc agtaccggcg cgctcgccgt gagcaggccg ggggccaccg ctcctgcaac
+     1861 gcgggccaga tggtcacgct gcacctcggc gatctgccgg cggagttttt ccatatcaaa
+     1921 ctccttggcc gcctgcggct ccagggcgcg cagcgcgcta tccagcgttg cctccagaac
+     1981 gttgggcggc atgaacgcga gaaaaacgcg ggcggaggac gaggtcagga tggggagaat
+     2041 ggaaccaacg ttcaggttca tgattaccgg gcggctgctg tgaatccagt gcgcgatcac
+     2101 cggcccacgc tcactccaga ccgccagcac cgccgtttga tccacgtcgt tgacgagcgt
+     2161 gcgcaacgtc tttgatgcct ctgcgaccgg gttgagccga ttcaaggccg ccacacccag
+     2221 ctgcaaggtc aactccccca gatcgtagcg cccgctcgcc gcgtcacgct cgatcaggcc
+     2281 cgcacgcacg aggctcgcga ggtaacgatg cgttcggctg gtggacatgt ccacctcgtc
+     2341 cgcgagctcc ttgacgctca tgggcgcttc cgcccgcaaa taggctcgca gcacgcgagc
+     2401 cccgatttcc accgactgca caccctgcga ctggcgcgca ttatcttcgc ttgtcttcga
+     2461 cacccgtctt cctcgtttta gctctcttca ttcccggacg ctgccggccc ggagtctagc
+     2521 aaaccccccg gtagcgccct cgcaaacacg gccacgcaaa taaatcgaca aatattcgct
+     2581 ctatcgacat tgcgcccgtg gagatggtgg actatgcttg acatgtccat tatgcatgat
+     2641 gtatgatgca tttactattt tagcaaagcc cgcaacaaac agggcacgct ctcgagccgc
+     2701 gcgccagcag gtcagtacaa ccgcgagacg ttccgggccg ctgcctggcg cggccggcga
+     2761 gggtcaagag gagggagagt tgatgaacac cgatagtccg ctgaaggcga tacagccacc
+     2821 ggccgacgag caggcatggg cggtcagggc gaggcgtcag ttcgaggcgg aacagttgct
+     2881 gtacgcctac gtcgaataca tcgacgatga tcgccttgaa gagttgccag agctgttcac
+     2941 cgaagacggc agctaccaga tcatctccag ggagaacgtc gagcgcggct tgccggcccc
+     3001 taccatgggt tgcagcaacc gcaacatgct catcgaccgc atcgtctcct tgcggcacgc
+     3061 caacatctac tcccaacacg cctaccgaca cgtgctcagc aatgtgcgcg tgaaagccat
+     3121 ggagggcgac gaggcgctgg tgcagagcaa ttacgtcgtc atggcgaccc gcggcgacgg
+     3181 catcgcccgg gtgtacagca ccggcaagta cgtcgatcgc ctggtgttcg aggaggatgg
+     3241 tccgaagttc aaacaaaaac gcgtgatctt cgacacgcaa ttaatcgaca cgctcctcgt
+     3301 gcgcccgctc tgagcgggtt gcggacaagc gtttcgatac aggagaaaaa ccaatgacca
+     3361 acgtatcgcc ccagcccgcg acggcggaac aagcgctccg tgtgccctac aaggttttca
+     3421 cggacaaggc gtatctggaa ctggagaacg agcggatttt ccgtggaaag gtgtgggcct
+     3481 acgtggccct ggaggcggag atccccgagc cgggcgacta caaggccacc catatcgggt
+     3541 tgtcgcccgt catcgtcacc cgagcggagg acggcagcat ccatgtcatg gagaaccgct
+     3601 gcgcgcaccg cggcgcgctg gtgtgtgagc agcgctacgg caacgccagc agcctgcagt
+     3661 gcgtttacca ccagtgggac tacaacttga agggggagct caaaggcgtg cccttcctgc
+     3721 gcggcgtgcg cggcaagggt ggcatgtgca agcccttcga caagagccgg cacggcctga
+     3781 ccaagctgcg cgttgccacc ctcaacggca ttgtcttcgc gagcttctcc gatgaggtgg
+     3841 aaccgctgga ggaatacctg gggccggtgg cggtagagat catcaagcgc aactgcaagc
+     3901 gccccctgag gcttctcggc tttcagcgcc agcgcatcca cagcaactgg aagctggccg
+     3961 ccgagaattc gcgagacccc taccacgccg gcctgctcca tcttttcctg aacaccttcg
+     4021 ggctctggcg aaataccagt gagtccgcgt cgatacagct cgacaggacg gggcggcatt
+     4081 gcttgctggc aaccgaactc cacaccgacg aggaagccgc ggagcatgcc agccaggctc
+     4141 aacacgccta taacccggag ttcaccctgc gagacagctc ggtcgtgcag agccagcggg
+     4201 aattcgacga caacatcaat ctggtggtgc tttcgatctt cccgaacctg gtggtgcatc
+     4261 aactgggtaa cgcgctctcg acccgacacg tcatccccat tggagaagac gagttcgaga
+     4321 tggtctggac gcagttcggc ttcgtcgacg acgacgagga gctcgaacaa ctgcgcataa
+     4381 cccacggcaa tctgatcggc ccctccggtt acgtttccct ggaggacggc gacgccatgg
+     4441 agcgcgttca gcgttcggtc agtcacgaca aggacagtac gtcgttcatg ggcatggtcg
+     4501 accagaacac gcgctccatg gactattgcg cgacagagaa tccgatcaag ggcttttggc
+     4561 agtactacca gcagacgctg ggcctggatg ccgacttcca tatccctgaa ccgagccaag
+     4621 cggcctcgag tggcgcctag agcaaaacgc ggcgcgttgc gttgaagaaa ccgggtatac
+     4681 ggatttaatg gttgatgggg caccttcacc ccatcaatct gataccaccc tcagatggtt
+     4741 gatagatcga ctccgtagtt gagttcctct gcgaagtccg gcagtccgta accgatggtt
+     4801 ttcttgtaga aaggagagac cttcgcagtc ggtgccttct tcttgtgctt cgtggtgtag
+     4861 agcattcgtg cccgcatcac ctcgaaggag taaccgcgcc cttcacggtt cttgtccttg
+     4921 gccagtcggt tgatggactc cgtgtaagcg ttggtgacgg gcatgtccgt ctcgaagtag
+     4981 gtcatggtct cttcgcgcca gtttcccact gccctgacca gatcgctcca gacttccttt
+     5041 tggcccttcg ggatggtggc tatccactcg tccagggcgg cttctgcctg gagccgtgtg
+     5101 gtggcgtccc agatgccgta gaagcgctcc ttgtgctcgt aggcggccag cagttgcggg
+     5161 aacgcgcctg tccaggtctc catgatgagg cgctcccggt ctgagacttc gtgagcgcgt
+     5221 ttcagcagga ttttccggtc tcccttgaga gtccggctct gggacggttt cagctccttt
+     5281 ctgaggccct tgcgcactct ctctagggca tcgttggcca tgcgcaccac atggaactta
+     5341 tcgaccacga tacgggcctg gggcagcaca gccttgaccg ctgcccggta ggggttccac
+     5401 atgtccatgc tgacgatctc gaccttctgc cggtctttca gcttcatcag gtagttggtc
+     5461 accacgtcct ggcggcgggt ggccagcagg tcgagcaggg ttcgctcctc aatgttggtc
+     5521 agaatgcagc ggtagcgctt gttcaggtat agctcgtcaa tgcccaggat gcggggcgtc
+     5581 tcgaagcggt gccagcgccc caggaactcg gcgcgggcgt tgaagatgtc gcgcaccgtc
+     5641 ttctcgtcca ggccggtctg tgccgccaca aaggtgtagg ggtggttgaa ggattccttc
+     5701 tccacgtact catgcagccg cagtgtcata cggaatccgt ccaccatctc cggtagctgg
+     5761 ggcctgaatg ttgtcttgca ggcccggcag gtgtgtcggc ggcggaccac ccagagagtg
+     5821 acccgcttgc cgtggatggg cagatcacga tagggaacgt cacgcttgcc gaaccgtacg
+     5881 aactcaccct gcacgccgca ttcctagcag gcgatgggat cgggcacgtc cacctggaag
+     5941 tgcatttcgt cgtcggttga tttgcagccc agtacttggt attgcggcag gtgaaggatg
+     6001 ttgtcgggaa gttcggtcat ggtgttgtat aggcgtaggt gtcagtcaga tc
+//
+

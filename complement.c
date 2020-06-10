@@ -2,13 +2,20 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX 100;
+struct Region
+{
+    int start[10];
+    int end[10];
+    char flag;
+};
 
 //读文件过程中调用，遇到CDS后执行
-int iscomplement(const char *s)
+int is_complement(const char *s)
 {
     int i=0,j,k;
     char a[10] = "complement";
+    for (i=0;i<10;i++) printf("%c",a[i]);
+    printf("\n");
     if (strlen(s) < 10) return 0; //compare length
     for ( i=0;((i+10) <= strlen(s));i++ )
         if (s[i] == a[0])  //overlap
@@ -23,68 +30,79 @@ int iscomplement(const char *s)
 
 
 //命令行参数file
-int **read(char *file[])
+void read_region(struct Region region_c)
 {
-    int iscomplement(const char *);
-    int i;
-    int **b =(int **)malloc(10*sizeof(int *));
-    for (i=0;i<10;i++)
-        b[i]=(int *)malloc(2*sizeof(int));
+    int i=0;
     FILE *ifp_a;
     char c;
-    int newline=0;
+    int newline=1;
     int m=0,j=0;
     char a[100];
-    if ((ifp_a = fopen(*file,"r")) == NULL) {printf("open file error!\n");exit(1);}
-    i=0;
-
+    int k,start=0,end=0;
+    if ((ifp_a = fopen(".\\sequence.gb","r")) == NULL) {printf("open file error!\n");exit(1);}
+    int mark=0;
     while ((c=getc(ifp_a)) != EOF)
     {
-        if (c=='\n') {newline=1;continue;}
-        if (newline == 1) 
-            if (c != ' ')
-            {        
-                if ((i==0) && (c == 'C')){i++;continue;} 
-                else {newline=0;i=0;}
-                if ((i==1) && (c == 'D')){i++;continue;} 
-                else {newline=0;i=0;}
-                if ((i==2) && (c == 'S')){i++;continue;} 
-                else {newline=0;i=0;}
-            }
-        if (i==3)
+        if ((c!='\n')&&(mark==-1)) continue;
+        if (c=='\n') 
+        {
+            newline = 1;
+            mark=0;
+            continue;
+        }
+        if ((newline == 1) && (mark != 3))
+        {
+            if ((mark == 0 ) && (isspace(c))) continue;
+            if (!isspace(c))
+            {       
+                
+                if ((c == 'C')&&(mark==0)) {++mark;continue;} 
+                else 
+                if ((mark==1) && (c == 'D')){mark++;continue;} 
+                else 
+                if ((mark==2) && (c == 'S')){mark++;continue;} 
+                else {mark=-1;newline=0;continue;}
+            }          
+        }
+        if (mark==3)
         {
             newline=0;
-            while (c != ' ')
-            {
-                if ((c !=')'))
+            if (isspace(c)) continue;    
+            if (c !=')')
                 {
                     a[j]=c;
                     j++;
                 }
-                else 
-                {a[j]='\0';
-                if (iscomplement(a)) 
+            else 
+                {
+                    a[j]='\0';
+                    /* for(j=0;a[j]!='\0';++j)
+                        printf("%c",a[j]);
+                    printf("\n"); */  //use for quiz
+                    if (is_complement(a)) 
                     {
-                        int k,start=0,end=0;
-                        for (k=0;(a[k]!='.');k++)
+                        region_c.flag='c';
+                        for (k=0;(a[k]!='(');k++);
+                        for (;(a[k]!='.');k++)
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 start=10*start+(a[k]-'0');
-                        for (;(a[k]!=')');k++)
+                        for (;(a[k]!='\0');k++)
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 end=10*end+(a[k]-'0');
-                        b[m][0]=start;
-                        b[m][1]=end;
-                        m++;
-                        b[m][0]=0;b[m][1]=0;//以最后的起端和终端为0作为complement标记
+                        region_c.start[m]=start;
+                        region_c.end[m]=end;
+
                         m++;
                         start=0;
                         end=0;
                     }  
-                i=0;
-                break;}
-            }
+                    i=0;
+                    j=0;
+                }
+            
         }       
     }
-    
-    return b;
+    region_c.start[m]=0;
+    region_c.end[m]=0;
+    fclose(ifp_a);
 }
