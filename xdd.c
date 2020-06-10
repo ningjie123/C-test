@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+#include <libgenbank.h>
 char* del(char string[]);
 #define buffer_size 1000//Maximum of  length                                    
 //"start..end"                                                    
@@ -23,12 +23,12 @@ void get_cols(char *file_path)
 
 	      if(strlen(p)<12) //Only one interval                                  
 		str=del(p);
-	      sscanf(str, "%d..%d", &region->start[0], &region->end[0]);
+	      sscanf(str, "%d..%d", &region1->start[0], &region1->end[0]);
 	    }
 
 
 	}
-      region.flag='n';
+      region1.flag='n';
       fclose(file);
     }
   char* del(char *string)
