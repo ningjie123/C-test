@@ -4,7 +4,7 @@
 
 
 #define buffer_size 1000//Maximum of  length
-int start,end;//"start..end"
+int start[2],end[2];//"start..end"
 
 void get_cols(char *file_path)
 {  char col[buffer_size];
@@ -18,7 +18,7 @@ void get_cols(char *file_path)
     {  p = strtok(NULL, "\t");
       strcpy(col[buffer_size], p);
       if(strlen(p)<12) //Only one interval
-	sscanf(delete(col), "%d..%d", &start, &end);
+	sscanf(delete(col), "%d..%d", &start[1], &end[1]);
     }
 
   fclose(file);

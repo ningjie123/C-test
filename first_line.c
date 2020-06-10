@@ -73,14 +73,3 @@ int first_line(char *filename,char *firstline)
 	strtotal(firstline,accession,definition);
 	return 0;
 }
-
-
-
-int main()
-{
-	char firstline[1000];
-	memset(firstline,1000,'\0');
-	first_line("test.gb",firstline);
-	printf("%s",firstline);
-	return 0;
-}
