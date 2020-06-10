@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "libgenbank.h"
+
 #define MAX 200
 
 extern region;
