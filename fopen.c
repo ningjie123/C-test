@@ -8,7 +8,7 @@ int i,len;
 char ** names;
 char c;
 len = strlen(name);
-names = (char **)calloc(outs,sizeof(char *));
+names = (char **)calloc(outs+1,sizeof(char *));
 for(i=1;i<=outs;i++)
 {
 	names[i] = (char *)calloc(20,sizeof(char));

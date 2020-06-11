@@ -24,7 +24,7 @@ if(file_in == NULL)
 	printf("error: Fail to open the files!\n");
 	exit (2);
 }
-int i=0,outs=0;
+int i=0,outs=0,j=0;
 char str_temp[600];
 while(fgets(str_temp,600,file_in) != NULL)
 {
@@ -33,15 +33,17 @@ while(fgets(str_temp,600,file_in) != NULL)
 fclose(file_in);
 printf("done1\n");
 FILE** file_out;
-file_out = (FILE **)calloc(outs,sizeof(FILE *));
+file_out = (FILE **)calloc(outs+1,sizeof(FILE *));
 fopen1(file_out,argv[1],outs);
 printf("done2\n");
 char firstline[1000];
 memset(firstline,1000,'\0');
 first_line(argv[1],firstline);
 printf("%s",firstline);
+fopen1(file_out,argv[1],outs);
 printf("done3\n");
-for(i=0;i<outs;i++) fputs(firstline,file_out[i]);
+for(i=1;i<=outs;i++) fputs(firstline,file_out[i]);
+for(i=1;i<=outs;i++) fclose(file_out[i]);
 //read_region(arvg[1],&region1);
 int count;
 char sequence[10000];
@@ -54,6 +56,6 @@ getcds(file_in,sequence,&region3);
 //file_in = fopen(argv[1],"r");
 //getcds(file_in,sequence,&region1);
 
-
+//for(i=1;i<=outs;i++) fclose(file_out[i]);
 return 0;
 }
