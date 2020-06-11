@@ -32,6 +32,7 @@ int strtotal(char *total,char *str1,char *str2)
 		total[i+len1] = str2[i];
 	}
 	total[len1+len2] = '\n';
+	total[0] = '>';
 	return 0;
 }
 
@@ -71,6 +72,7 @@ int first_line(char *filename,char *firstline)
 		i++;
 	}
 	strtotal(firstline,accession,definition);
+	printf("%s\n",firstline);
 	fclose(file_in);
 	return 0;
 }

@@ -1,12 +1,8 @@
 //Get the sequence from genbank ORIGIN
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "libgenbank.h"
 
 #define MAX 200
-struct REGION region3;
 int isbase(char s)
 {
   if (s=='a'||s=='t'||s=='c'||s=='g'||s=='A'||s=='T'||s=='C'||s=='G')
@@ -14,24 +10,24 @@ int isbase(char s)
   else return 0;
 }  
 
-void getcds(FILE* fp,char *sequence,struct REGION Region)
+void getcds(FILE* fp,char *sequence,region *Region)
 {
   char buf[MAX];
   int num,i=0,j;
   int left_gap,right_gap,len;
   while(1){
-    if(Region.start[i]==0) break;
+    if(Region->start[i]==0) break;
     fgets(buf,MAX,fp);
     if (strcmp(buf,"ORIGIN")==0){
         fscanf(fp,"%d",num);
-        if ( Region.start[i]-num < 60 && Region.start[i]-num >= 0 ){
-            int left_gap=Region.start[i]-num+1;
+        if ( Region->start[i]-num < 60 && Region->start[i]-num >= 0 ){
+            int left_gap=Region->start[i]-num+1;
 	    while (1){
 		char *tmp[MAX];
 		fgets(tmp[j++],MAX,fp);
                 fscanf(fp,"%d",num);
-                if (num > Region.end[i]){
-		  int right_gap=num-Region.end[i]-1;
+                if (num > Region->end[i]){
+		  int right_gap=num-Region->end[i]-1;
 		  fgets(buf,MAX,fp);
 		  break;
 		}
@@ -54,7 +50,7 @@ void getcds(FILE* fp,char *sequence,struct REGION Region)
   len=strlen(sequence_tmp)-left_gap-right_gap;
   strncpy(sequence,sequence_tmp,len);
 
-  if(Region.flag=='c'){
+  if(Region->flag=='c'){
      int s=0;
      for(s;sequence[s]!='\0';s++){
         if(sequence[s]=='a'||sequence[s]=='A'){
@@ -71,6 +67,7 @@ void getcds(FILE* fp,char *sequence,struct REGION Region)
 	}
      } 
   }
+printf("%s\n",sequence);
 return;   
 }
 

@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <libgenbank.h>
+#include "libgenbank.h"
 char* del(char string[]);
 #define buffer_size 1000//Maximum of  length                                    
 //"start..end"                                                    
-
-void get_cols(char *file_path)
+//struct REGION region1;
+void get_cols(char *file_path,region *region1)
 {  char col[buffer_size];
   char *str;
   FILE *file=fopen(file_path,"r");
@@ -23,14 +23,15 @@ void get_cols(char *file_path)
 
 	      if(strlen(p)<12) //Only one interval                                  
 		str=del(p);
-	      sscanf(str, "%d..%d", &region1->start[0], &region1->end[0]);
+	      sscanf(str, "%d..%d", region1->start[0], region1->end[0]);
 	    }
 
 
 	}
-      region1.flag='n';
+      region1->flag='n';
       fclose(file);
     }
+}
   char* del(char *string)
   {
     int i,j;

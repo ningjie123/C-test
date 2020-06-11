@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-struct Region
+#include "test.h"
+/*typedef struct REGION
 {
-    int start[10];
-    int end[10];
+    int start[100];
+    int end[100];
     char flag;
-};
-
+}region;*/
+region p;
 int main()
 {
     char file_name[]="./sequence.gb";
-    struct Region p;
+   // struct REGION p;
     read_region(file_name,&p);
     
     int i;

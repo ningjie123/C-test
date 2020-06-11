@@ -9,14 +9,20 @@ char ** names;
 char c;
 len = strlen(name);
 names = (char **)calloc(outs,sizeof(char *));
-for(i=0;i<outs;i++)
+for(i=1;i<=outs;i++)
 {
 	names[i] = (char *)calloc(20,sizeof(char));
 	strcpy(names[i],name);
-	names[i][len] = '-';
+	names[i][len-3] = '-';
 	c = (char)i + '0';
-	names[i][len+1] = c;
-	file_out[i] = fopen(names[1],"w");
+	names[i][len-2] = c;
+	names[i][len-1] = '.';
+	names[i][len] = 'f';
+	names[i][len+1] = 'a';
+	names[i][len+2] = 's';
+	names[i][len+3] = 't';
+	names[i][len+4] = 'a';
+	file_out[i] = fopen(names[i],"w");
 	free(names[i]);
 }
 free(names);

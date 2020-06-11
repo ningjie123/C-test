@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-extern region
-/*struct Region
+#include "test.h"
+/*struct REGION
 {
     int start[10];
     int end[10];
     char flag;
 };*/
-
 //读文件过程中调用，遇到CDS后执行
 int is_complement(const char *s)
 {
@@ -28,7 +27,7 @@ int is_complement(const char *s)
 
 
 //命令行参数file
-void read_region(char f[],struct REGION region_c)
+void read_region(char f[],region *region_c)
 {
     int i=0;
     FILE *ifp_a;
@@ -79,15 +78,15 @@ void read_region(char f[],struct REGION region_c)
                     printf("\n"); */  //use for quiz
                     if ((j=is_complement(a))!=0) 
                     {
-                        region_c.flag='c';
+                        region_c->flag='c';
                         for (k=j;(a[k]!='.');k++)
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 start=10*start+(a[k]-'0');
                         for (;(a[k]!='\0');k++)
                             if ((a[k]>='0')&&(a[k]<='9'))
                                 end=10*end+(a[k]-'0');
-                        region_c.start[m]=start;
-                        region_c.end[m]=end;
+                        region_c->start[m]=start;
+                        region_c->end[m]=end;
 
                         m++;
                         start=0;
@@ -99,7 +98,7 @@ void read_region(char f[],struct REGION region_c)
             
         }       
     }
-    region_c.start[m]=0;
-    region_c.end[m]=0;
+    region_c->start[m]=0;
+    region_c->end[m]=0;
     fclose(ifp_a);
 }

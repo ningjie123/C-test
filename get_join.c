@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "libgenbank.h"
-//struct REGION region3;
 int strstart2(char *s,char *t)
 {
 	int lent,i=0,j=0,k=0;
@@ -56,7 +55,7 @@ int exp_char(char c,int exp)
 	return cc;
 }
 
-int get_join(char *filename)
+int get_join(char *filename,region* region3)
 {
 
 	FILE* file_in;
@@ -95,20 +94,20 @@ int get_join(char *filename)
 			{
 				while(s[i][j] != '.')
 				{
-					region3.start[n] += exp_char(s[i][j],6 - k);
+					region3->start[n] += exp_char(s[i][j],6 - k);
 					k++;
 					j++;
 				}
-				region3.start[n] = region3.start[n] / exp_char('1',7 - k);
+				region3->start[n] = region3->start[n] / exp_char('1',7 - k);
 				k=0;
 				j += 2;
 				while(s[i][j] != ',' && s[i][j] != ')')
 				{
-					region3.end[n] += exp_char(s[i][j],6 - k);
+					region3->end[n] += exp_char(s[i][j],6 - k);
 					k++;
 					j++;
 				}
-				region3.end[n] = region3.end[n] / exp_char('1',7 - k);
+				region3->end[n] = region3->end[n] / exp_char('1',7 - k);
 				k=0;
 				n++;
 				j--;
