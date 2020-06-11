@@ -9,7 +9,7 @@
 	int start[100];
 	int end[100];
 };*/
-region region1,region2,region3;
+//region region1,region2,region3;
 int main(int argc,char **argv)
 {
 if(argc != 2)
@@ -24,12 +24,15 @@ if(file_in == NULL)
 	printf("error: Fail to open the files!\n");
 	exit (2);
 }
-int i=0,outs=0,j=0;
+int i=0,outs=0,j=0,join_count=0;
 char str_temp[600];
 while(fgets(str_temp,600,file_in) != NULL)
 {
 	if(strstart2(str_temp,"CDS") == 1) outs++;
+	if(strstart2(str_temp,"CDS") == 1) join_count++;
 }
+region *regions;
+regions = (region *)calloc(outs+1,sizeof(region));
 fclose(file_in);
 printf("done1\n");
 FILE** file_out;
@@ -46,16 +49,25 @@ for(i=1;i<=outs;i++) fputs(firstline,file_out[i]);
 for(i=1;i<=outs;i++) fclose(file_out[i]);
 //read_region(arvg[1],&region1);
 int count;
-char sequence[10000];
-count = get_join(argv[1],&region3);
+char **sequence;
+sequence = (char **)calloc(outs+1,sizeof(char *));
+for(i=1;i<=outs;i++) sequence[i] = (char *)calloc(10000,sizeof(char));
+for(i=1;i<=join_count;i++)
+{
+	count = get_join(argv[1],&regions[i],i,sequence[i]);
+}
 printf("done4\n");
-file_in = fopen(argv[1],"r");
-getcds(file_in,sequence,&region3);
+//file_in = fopen(argv[1],"r");
+//getcds(file_in,sequence,&region3);
 //fclose(file_in);
 //get_cols(argv[1],&region1);
 //file_in = fopen(argv[1],"r");
 //getcds(file_in,sequence,&region1);
 
 //for(i=1;i<=outs;i++) fclose(file_out[i]);
+free(file_out);
+free(regions);
+for(i=1;i<=outs;i++) free(sequence[i]);
+free(sequence);
 return 0;
 }

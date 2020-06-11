@@ -1,7 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "libgenbank.h"
+
+int isbase(char s)
+{
+  if (s=='a'||s=='t'||s=='c'||s=='g'||s=='A'||s=='T'||s=='C'||s=='G')
+     return 1;
+  else return 0;
+}
+
 int strstart2(char *s,char *t)
 {
 	int lent,i=0,j=0,k=0;
@@ -119,7 +124,61 @@ int get_join(char *filename,region* region3,int num,char *sequence)
 			j++;
 		}
 	}
-		
+ 	char buf[200];
+  	int num,i=0,j;
+ 	int left_gap,right_gap,len;
+  	while(1){
+    	if(region3->start[i]==0) break;
+    	fgets(buf,200,fp);
+   	if (strcmp(buf,"ORIGIN")==0){
+        	fscanf(fp,"%d",num);
+        	if ( region3->start[i]-num < 60 && region3->start[i]-num >= 0 ){
+            		left_gap=region3->start[i]-num;
+	    		while (1){
+				char *tmp[200];
+				fgets(tmp[j++],200,fp);
+                		fscanf(fp,"%d",num);
+                		if (num > region3->end[i]){
+		  			right_gap=num-region3->end[i]-1;
+		  			fgets(buf,MAX,fp);
+		  			break;
+				}
+  				int m,n;
+			 	char sequence_tmp[1000];
+			  	for(m=0;m<j;m++){ 
+			       		for(n=0;tmp[m][n]!='\n';n++){    
+						if (isbase(tmp[m][n])){
+							strcat(sequence_tmp,tmp[m][n]);
+        					}
+    					}
+  				}			    
+  				len=strlen(sequence_tmp)-left_gap-right_gap;
+  				strncpy(sequence,sequence_tmp+left_gap,len);
+				
+	    		}             
+		}
+    		i++;
+    		rewind(fp);
+    	}
+	printf("finish1\n");
+  if(Region->flag=='c'){
+     int s=0;
+     for(s;sequence[s]!='\0';s++){
+        if(sequence[s]=='a'||sequence[s]=='A'){
+          sequence[s]+=19;
+        }
+ 	if(sequence[s]=='t'||sequence[s]=='T'){
+	  sequence[s]-=19;
+	}
+	if(sequence[s]=='c'||sequence[s]=='C'){
+	  sequence[s]+=4;
+	}
+	if(sequence[s]=='g'||sequence[s]=='G'){
+	  sequence[s]-=4;
+	}
+     } 
+  }
+printf("%s\n",sequence);		
 	for(i=1;i<=line_count;i++) free(s[i]);
 	free(s);
 	fclose(file_in);
