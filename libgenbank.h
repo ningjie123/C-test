@@ -17,3 +17,4 @@ void getcds(FILE *fp,char *sequence,region *Region);//getcds.c
 void get_cols(char *file_path,region *region1);
  char* del(char *string);	//xdd.c
 int fopen1(FILE **file_out,char *name,int outs);
+int fopen2(FILE **file_out,char *name,int outs);

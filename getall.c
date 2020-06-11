@@ -180,7 +180,6 @@ int get_join(char *filename,region* region3,int num,char *sequence)
 					}
 		}
 	}
-	printf("%s\n",sequence);
 	for(i=1;i<=line_count;i++) free(s[i]);
 	free(s);
 	fclose(file_in);
